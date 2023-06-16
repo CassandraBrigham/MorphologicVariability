@@ -12,9 +12,14 @@ The morphologic classes are user-defined based on the profile forms represented 
 
 ## Notebooks
 ### 1. extract-profiles-from-dem.ipynb (morph-var 1)
+In this notebook, we extract landform-normal profiles using three user-provided data: a DEM of the region of interest, a polygon shapefile that can be used to crop the DEM to the sepecific lanform if desired, and a line shapefile (contained within the cropping polygon) that traces the center of the landform.
+
+The output of the notebook is a folder with text files for each landform-normal profile. Each text file has columns for the Easting, Northing, UTM Zone, and elevation of each point along the landform-normal profile. These text files are used as the data input for morp-var 2.
 
 ### 2. process-profiles.ipynb (morph-var 2)
+In this notebook, we use the output of the first notebook (morph-var 1), which is a folder containing text files with the coordinates and elevation data of points along each landform-normal profile. This notebook focuses on formatting and normalizing the profile data, so that they are ready for use in our classification algorithm (morph-var 3).
 
+To normalize the profiles, we calculate the two-dimensional coordinates of each profile, automatically determine the position of the crest and toe of the scarp, crop the the profile between the crest and the toe and normalize the profile by the scarp height. The output of the notebook is a landform-specific folder with text files for the processed profiles. If there are multiple landforms to be analyzed, the notebook will have to be re-run for each landform. 
 ### 3. train-classifier.ipynb (morph-var 3)
 
 ### 4. classify-new-landform.ipynb (morph-var 4)

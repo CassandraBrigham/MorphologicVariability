@@ -21,6 +21,9 @@ In this notebook, we use the output of the first notebook (morph-var 1), which i
 
 To normalize the profiles, we calculate the two-dimensional coordinates of each profile, automatically determine the position of the crest and toe of the scarp, crop the the profile between the crest and the toe and normalize the profile by the scarp height. The output of the notebook is a landform-specific folder with text files for the processed profiles. If there are multiple landforms to be analyzed, the notebook will have to be re-run for each landform. 
 ### 3. train-classifier.ipynb (morph-var 3)
+Before running morph-var 3, the user will have to manually inspect all or a sub-selection the processed profiles obtained from morph-var 2 and classify them according to the desired morphologic attributes. The notebook is currently set up for six morphologic classes, but this can be adapted for any number of classes. Once the the selected profiles have been inspected and classified, all of the training profile text files must be put in the same folder, which will be used as the input folder for morph-var 3. A list of file names for each class will be needed as well. 
+
+The outputs of the notebook are the best parameters to use in the SVM model (which will be needed in morph-var 4) and the cross-validation statistics of the classification model.
 
 ### 4. classify-new-landform.ipynb (morph-var 4)
 

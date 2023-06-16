@@ -26,7 +26,14 @@ Before running morph-var 3, the user will have to manually inspect all or a sub-
 The outputs of the notebook are the best parameters to use in the SVM model (which will be needed in morph-var 4) and the cross-validation statistics of the classification model.
 
 ### 4. classify-new-landform.ipynb (morph-var 4)
+In this notebook, we use the classifier built and trained in morph-var 3 to classify the profiles of a new landform. Extract and process the profiles using morph-var 1 and 2, storing the processed profiles in a single folder if there are multiple landforms. This folder will be one input folder for the notebook, with the other being the training data folder created for morph-var 3. 
 
+The output of this notebook is a text file with the class predictions for each profile. 
 ### 5. calculate-variability.ipynb (morph-var 5)
+In this notebook, we use the landform profile classification results obtained from morph-var 4 to calculate the number and proportion of classes represented in a moving window along a landform.
+
+The output of this notebook is a text file with the varib
+
+
 
 Brigham, C. A. P., and Crider, J., G.: A New Metric for Morphologic Variability Using Landform Shape Classification via Supervised Machine Learning, Geomorphology, 399, (2022). https://doi.org/10.1016/j.geomorph.2021.108065
